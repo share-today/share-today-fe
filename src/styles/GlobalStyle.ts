@@ -18,6 +18,12 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
   }
 
+  button {
+    padding: 0;
+    background: none;
+    border: none;
+    outline:none;
+  }
   button:hover {
     cursor: pointer;
   }
