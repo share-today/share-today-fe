@@ -1,12 +1,8 @@
 import React from 'react';
-import Login from './pages/Login';
+import Router from './Routes';
 
 function App() {
-  return (
-    <div className='App'>
-      <Login />
-    </div>
-  );
+  return <Router />;
 }
 
 export default App;

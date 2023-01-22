@@ -1,8 +1,15 @@
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { ImageButton } from '../components/atoms/ImageButton';
 import { Text } from '../components/atoms/Text';
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  const moveToPage = () => {
+    navigate('/');
+  };
+
   return (
     <LoginContainer>
       <Title>하루 공유</Title>
@@ -18,7 +25,7 @@ const Login = () => {
           </ImageButton>
         </div>
         <div>
-          <Text>건너뛰기</Text>
+          <Text onClick={moveToPage}>건너뛰기</Text>
         </div>
       </ButtonGroup>
     </LoginContainer>
