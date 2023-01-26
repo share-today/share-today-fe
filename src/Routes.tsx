@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Header from './components/organisms/Header';
 import BundleOfStory from './pages/BundleOfStory';
 import BundleOfStoryDetail from './pages/BundleOfStoryDetail';
 import Home from './pages/Home';
@@ -10,6 +11,7 @@ import Setting from './pages/Setting';
 const Router = () => {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route path='/login' element={<Login />} />
         <Route path='/' element={<Home />} />

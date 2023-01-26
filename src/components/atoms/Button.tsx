@@ -12,5 +12,5 @@ export const Button = styled.button<Props>`
   width: ${(props) => props.width}rem;
   height: ${(props) => props.height}rem;
   border-radius: 4px;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 `;

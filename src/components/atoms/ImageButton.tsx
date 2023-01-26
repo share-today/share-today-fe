@@ -18,5 +18,5 @@ export const ImageButton = styled.button<Props>`
     props.imgType === 'talk' ? `${talk}` : `${apple}`})
   background-repeat: no-repeat;
   border-radius: 4px;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 `;
