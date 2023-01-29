@@ -1,11 +1,11 @@
 import styled from 'styled-components';
+import { NavBarProps } from '../../types/types';
 
-const navMenu = ['나의 오늘', '나의 어제', '누군가의 어제'];
-const NavBar = () => {
+const NavBar = (props: NavBarProps) => {
   return (
     <NavBarContainer>
-      {navMenu.map((menu) => {
-        return <span>{menu}</span>;
+      {props.navMenu.map((menu, index) => {
+        return <span key={index}>{menu}</span>;
       })}
     </NavBarContainer>
   );
@@ -15,12 +15,14 @@ const NavBarContainer = styled.div`
   width: 95%;
   margin: 0 0 0 auto;
   height: 3rem;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid #2b2b2b;
   margin-top: 2rem;
 
   span {
-    font-size: 1.5rem;
-    margin-left: 16rem;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 24px;
+    margin-right: 1.5rem;
   }
 `;
 

@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import NoticeSection from '../components/templates/NoticeSection';
 
 const Notice = () => {
   const navigate = useNavigate();
@@ -9,7 +10,7 @@ const Notice = () => {
 
   return (
     <>
-      <button onClick={moveToPage}>알림 디테일 페이지 이동</button>
+      <NoticeSection />
     </>
   );
 };

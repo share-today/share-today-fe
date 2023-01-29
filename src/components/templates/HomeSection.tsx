@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 import NavBar from '../organisms/NavBar';
 
+const navMenu = ['나의 오늘', '나의 어제', '누군가의 어제'];
+
 const HomeSection = () => {
   return (
     <>
-      <NavBar />
+      <NavBar navMenu={navMenu} />
       <HomeSectionContainer>
         <Input />
       </HomeSectionContainer>
