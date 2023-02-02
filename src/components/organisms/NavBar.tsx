@@ -12,17 +12,18 @@ const NavBar = (props: NavBarProps) => {
 };
 
 const NavBarContainer = styled.div`
-  width: 95%;
-  margin: 0 0 0 auto;
-  height: 3rem;
+  width: 23.4rem;
+  margin: auto;
+
   border-bottom: 1px solid #2b2b2b;
   margin-top: 2rem;
 
   span {
     font-size: 1rem;
     font-weight: 700;
-    line-height: 24px;
+    line-height: 1.5rem;
     margin-right: 1.5rem;
+    margin-bottom: 0.7rem;
   }
 `;
 

@@ -11,15 +11,19 @@ const Header = () => {
 
   return (
     <HeaderContainer>
-      <img src={arrow} alt='arrow' onClick={moveToPage} />
+      <IconDiv>
+        <img src={arrow} alt='arrow' onClick={moveToPage} />
+      </IconDiv>
     </HeaderContainer>
   );
 };
 
 const HeaderContainer = styled.div`
-  width: 100%;
-  top: 20px;
-  left: 20px;
-  margin: 73px auto 74px auto;
+  margin: auto;
+  width: 23.4rem;
+`;
+
+const IconDiv = styled.div`
+  margin-top: 1.6rem;
 `;
 export default Header;

@@ -24,9 +24,6 @@ const Login = () => {
             <Text color='white'>Apple로 로그인</Text>
           </ImageButton>
         </div>
-        <div>
-          <Text onClick={moveToPage}>건너뛰기</Text>
-        </div>
       </ButtonGroup>
     </LoginContainer>
   );
@@ -34,22 +31,22 @@ const Login = () => {
 
 const LoginContainer = styled.div`
   margin: auto;
-  width: 375px;
+  width: 23.4rem;
   border: 1px solid black;
   text-align: center;
 `;
 
 const Title = styled.p`
   margin: auto;
-  width: 224px;
-  height: 86px;
-  padding: 35px 0;
+  width: 14rem;
+  height: 5.3rem;
+  padding: 2.1rem 0;
   border: 1px solid black;
-  margin-top: 208px;
-  margin-bottom: 280px;
+  margin-top: 13rem;
+  margin-bottom: 17.5rem;
 `;
 
 const ButtonGroup = styled.div`
-  margin-bottom: 54px;
+  margin-bottom: 3.3rem;
 `;
 export default Login;
