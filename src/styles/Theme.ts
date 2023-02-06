@@ -1,14 +1,12 @@
 const colors = {
-  gray0: '#F7F8F9',
-  gray1: '#E9EBED',
-  gray2: '#BDBDBD',
-  gray3: '#828282',
-  gray4: '#4F4F4F',
-  gray5: '#26282B',
-  gray6: '#1B1D1F',
-  gray7: '#474C51',
-  black: '#000000',
-  red: 'red',
+  black: '#2B2B2B',
+  white: '#FFFFFF',
+  gray: '#BEBEBE',
+  dark_gray: '#979797',
+  light_gray: '#EBEBEB',
+  blue: '#E0E9FF',
+  pink: '#FFE0E0',
+  red: '#FF8080',
 };
 
 const font = {

@@ -6,7 +6,7 @@ const navMenu = ['알림'];
 const NoticeSection = () => {
   return (
     <>
-      <NavBar navMenu={navMenu} />
+      {/* <NavBar navMenu={navMenu} /> */}
       <ListBox />
     </>
   );

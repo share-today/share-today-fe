@@ -4,18 +4,19 @@ import Header from './components/organisms/Header';
 import BundleOfStory from './pages/BundleOfStory';
 import BundleOfStoryDetail from './pages/BundleOfStoryDetail';
 import Home from './pages/Home';
-import LayoutPage from './pages/LayoutPage';
+import LogoSection from './components/templates/LogoSection';
 import Login from './pages/Login';
 import Notice from './pages/Notice';
 import NoticeDetail from './pages/NoticeDetail';
 import Setting from './pages/Setting';
+import Theme from './styles/Theme';
 
 const Router = () => {
   return (
     <BrowserRouter>
-      <Div>
-        <LayoutPage />
-        <div>
+      <RouterContainer>
+        <LogoSection />
+        <MainSection>
           <Header />
           <Routes>
             <Route path='/login' element={<Login />} />
@@ -26,15 +27,20 @@ const Router = () => {
             <Route path='/notice-detail' element={<NoticeDetail />} />
             <Route path='/setting' element={<Setting />} />
           </Routes>
-        </div>
-      </Div>
+        </MainSection>
+      </RouterContainer>
     </BrowserRouter>
   );
 };
 
-const Div = styled.div`
+const RouterContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
 `;
 
+const MainSection = styled.div`
+  width: 23.4rem;
+  margin: auto;
+  background-color: ${Theme.colors.white};
+`;
 export default Router;
