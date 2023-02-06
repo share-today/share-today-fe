@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Nanum Gothic', 'Malgun Gothic', sans-serif;
     box-sizing: border-box;
     position: relative;
+    background-color: rgb(241, 241, 241);
   }
 
   button {
