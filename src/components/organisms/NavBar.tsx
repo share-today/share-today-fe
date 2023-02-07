@@ -8,7 +8,7 @@ const NavBar = (props: NavBarProps) => {
 
   return (
     <NavBarContainer>
-      <div>
+      <Wrap>
         {props.navMenu.map((menu, index) => {
           return (
             <MenuSpan
@@ -21,12 +21,17 @@ const NavBar = (props: NavBarProps) => {
             </MenuSpan>
           );
         })}
-      </div>
+      </Wrap>
     </NavBarContainer>
   );
 };
 
 const NavBarContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+
+const Wrap = styled.div`
   width: 22rem;
   border-bottom: 1px solid #2b2b2b;
   margin-top: 2rem;

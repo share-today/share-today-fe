@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import apple from '../../assets/apple.png';
-import talk from '../../assets/talk.png';
+import apple from '../../assets/images/apple.png';
+import talk from '../../assets/images/talk.png';
 
 type Props = {
   children: React.ReactNode;
