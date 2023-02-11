@@ -1,12 +1,15 @@
+import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import alarm from '../../assets/images/alarm.png';
 import arrow from '../../assets/images/arrow.png';
 import menu from '../../assets/images/menu.png';
+import SideBar from './SideBar';
 
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const moveToPage = () => {
     navigate('/notice');
@@ -14,6 +17,7 @@ const Header = () => {
 
   const viewSideTab = () => {
     console.log('viewMenu');
+    setIsOpen(true);
   };
 
   const goBack = () => {
@@ -22,10 +26,13 @@ const Header = () => {
 
   if (location.pathname === '/') {
     return (
-      <HeaderContainer>
-        <img src={alarm} alt='alarm' onClick={moveToPage} />
-        <img src={menu} alt='menu' onClick={viewSideTab} />
-      </HeaderContainer>
+      <>
+        <HeaderContainer>
+          <img src={alarm} alt='alarm' onClick={moveToPage} />
+          <img src={menu} alt='menu' onClick={viewSideTab} />
+        </HeaderContainer>
+        <SideBar isOpen={isOpen} setIsOpen={setIsOpen} />
+      </>
     );
   } else if (location.pathname === '/notice') {
     return (

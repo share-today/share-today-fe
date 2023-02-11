@@ -38,7 +38,7 @@ const Wrap = styled.div`
   padding-left: 1rem;
 `;
 
-const MenuSpan = styled.span<{ isActive: string }>`
+const MenuSpan = styled.span<{ isActive: string; id: string }>`
   margin-right: 1.5rem;
   margin-bottom: 0.7rem;
   cursor: pointer;
@@ -49,6 +49,24 @@ const MenuSpan = styled.span<{ isActive: string }>`
           height: 18px;
           font-family: 'Cafe24 Ssurround';
           background: #e0e9ff;
+          font-size: 1rem;
+          font-weight: 700;
+          line-height: 1.5rem;
+        `
+      : css`
+          font-family: 'Cafe24 Ssurround air';
+          font-style: normal;
+          font-weight: 300;
+          font-size: 1rem;
+          line-height: 1.5rem;
+        `};
+
+  ${(props) =>
+    props.id === '누군가의 어제' && props.isActive === 'active'
+      ? css`
+          height: 18px;
+          font-family: 'Cafe24 Ssurround';
+          background: #ffe0e0;
           font-size: 1rem;
           font-weight: 700;
           line-height: 1.5rem;
