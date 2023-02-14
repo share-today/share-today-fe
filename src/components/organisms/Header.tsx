@@ -34,13 +34,13 @@ const Header = () => {
         <SideBar isOpen={isOpen} setIsOpen={setIsOpen} />
       </>
     );
-  } else if (location.pathname === '/notice') {
+  } else if (location.pathname.includes('notice')) {
     return (
       <HeaderContainer>
         <img src={arrow} alt='arrow' onClick={goBack} />
       </HeaderContainer>
     );
-  } else if (location.pathname === 'story') {
+  } else if (location.pathname.includes('story')) {
     return (
       <HeaderContainer>
         <img src={menu} alt='menu' />
