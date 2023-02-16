@@ -1,5 +1,11 @@
+import SettingSection from '../components/templates/SettingSection';
+
 const Setting = () => {
-  return <h1>Setting</h1>;
+  return (
+    <>
+      <SettingSection />
+    </>
+  );
 };
 
 export default Setting;

@@ -29,6 +29,8 @@ const ListBoxContainer = styled.div`
   border-radius: 8px;
   padding: 16px 16px 20px 16px;
   background: rgba(235, 235, 235, 0.8);
+
+  cursor: pointer;
 `;
 
 const Title = styled.div`

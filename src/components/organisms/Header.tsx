@@ -16,8 +16,8 @@ const Header = () => {
   };
 
   const viewSideTab = () => {
-    console.log('viewMenu');
-    setIsOpen(true);
+    console.log('viewMenu', isOpen);
+    setIsOpen(!isOpen);
   };
 
   const goBack = () => {
@@ -42,9 +42,15 @@ const Header = () => {
     );
   } else if (location.pathname.includes('story')) {
     return (
-      <HeaderContainer>
-        <img src={menu} alt='menu' />
-      </HeaderContainer>
+      <HeaderContainerFlexEnd>
+        <img src={menu} alt='menu' onClick={viewSideTab} />
+      </HeaderContainerFlexEnd>
+    );
+  } else if (location.pathname.includes('setting')) {
+    return (
+      <HeaderContainerFlexEnd>
+        <img src={menu} alt='menu' onClick={viewSideTab} />
+      </HeaderContainerFlexEnd>
     );
   } else {
     return <HeaderContainer />;
@@ -55,6 +61,13 @@ const HeaderContainer = styled.div`
   display: flex;
   width: 23.4rem;
   justify-content: space-between;
+  padding: 1.6rem 1.6rem 0 1.6rem;
+`;
+
+const HeaderContainerFlexEnd = styled.div`
+  display: flex;
+  width: 23.4rem;
+  justify-content: flex-end;
   padding: 1.6rem 1.6rem 0 1.6rem;
 `;
 
