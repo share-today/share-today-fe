@@ -16,7 +16,6 @@ const Header = () => {
   };
 
   const viewSideTab = () => {
-    console.log('viewMenu', isOpen);
     setIsOpen(!isOpen);
   };
 
@@ -27,11 +26,11 @@ const Header = () => {
   if (location.pathname === '/') {
     return (
       <>
+        <SideBar isOpen={isOpen} setIsOpen={setIsOpen} />
         <HeaderContainer>
           <img src={alarm} alt='alarm' onClick={moveToPage} />
           <img src={menu} alt='menu' onClick={viewSideTab} />
         </HeaderContainer>
-        <SideBar isOpen={isOpen} setIsOpen={setIsOpen} />
       </>
     );
   } else if (location.pathname.includes('notice')) {
@@ -42,15 +41,21 @@ const Header = () => {
     );
   } else if (location.pathname.includes('story')) {
     return (
-      <HeaderContainerFlexEnd>
-        <img src={menu} alt='menu' onClick={viewSideTab} />
-      </HeaderContainerFlexEnd>
+      <>
+        <SideBar isOpen={isOpen} setIsOpen={setIsOpen} />
+        <HeaderContainerFlexEnd>
+          <img src={menu} alt='menu' onClick={viewSideTab} />
+        </HeaderContainerFlexEnd>
+      </>
     );
   } else if (location.pathname.includes('setting')) {
     return (
-      <HeaderContainerFlexEnd>
-        <img src={menu} alt='menu' onClick={viewSideTab} />
-      </HeaderContainerFlexEnd>
+      <>
+        <SideBar isOpen={isOpen} setIsOpen={setIsOpen} />
+        <HeaderContainerFlexEnd>
+          <img src={menu} alt='menu' onClick={viewSideTab} />
+        </HeaderContainerFlexEnd>
+      </>
     );
   } else {
     return <HeaderContainer />;

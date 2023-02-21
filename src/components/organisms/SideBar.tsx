@@ -14,14 +14,14 @@ const SideBar = ({
   const outside = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    document.addEventListener('mousedown', handlerOutsie);
+    document.addEventListener('mousedown', handlerOutside);
 
     return () => {
-      document.removeEventListener('mousedown', handlerOutsie);
+      document.removeEventListener('mousedown', handlerOutside);
     };
   });
 
-  const handlerOutsie = (e: any) => {
+  const handlerOutside = (e: any) => {
     if (!outside.current) {
       return null;
     }
