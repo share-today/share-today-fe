@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import SendFooter from '../molecules/SendFooter';
 
 const SomeonesYesterday = () => {
   return (
@@ -43,5 +44,9 @@ const Comment = styled.input`
   background: rgba(255, 255, 255, 0.8);
   border-radius: 0.5rem;
   border: none;
+
+  &:focus {
+    outline: none;
+  }
 `;
 export default SomeonesYesterday;
