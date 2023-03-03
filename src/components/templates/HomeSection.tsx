@@ -41,6 +41,7 @@ const HomeSectionWrap = styled.div`
 
 const HomeSectionContainer = styled.div`
   text-align: center;
+  margin-top: 1rem;
 `;
 
 export default HomeSection;

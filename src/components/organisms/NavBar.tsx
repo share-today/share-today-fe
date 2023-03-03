@@ -33,7 +33,7 @@ const NavBarContainer = styled.div`
 
 const Wrap = styled.div`
   width: 22rem;
-  border-bottom: 1px solid #2b2b2b;
+  border-bottom: 0.06rem solid #2b2b2b;
   margin-top: 2rem;
   padding-left: 1rem;
 `;
@@ -43,41 +43,35 @@ const MenuSpan = styled.span<{ isActive: string; id: string }>`
   margin-bottom: 0.7rem;
   cursor: pointer;
 
-  ${(props) =>
-    props.isActive === 'active'
-      ? css`
-          height: 18px;
-          font-family: 'Cafe24 Ssurround';
-          background: #e0e9ff;
-          font-size: 1rem;
-          font-weight: 700;
-          line-height: 1.5rem;
-        `
-      : css`
-          font-family: 'Cafe24 Ssurround air';
-          font-style: normal;
-          font-weight: 300;
-          font-size: 1rem;
-          line-height: 1.5rem;
-        `};
-
-  ${(props) =>
-    props.id === '누군가의 어제' && props.isActive === 'active'
-      ? css`
-          height: 18px;
-          font-family: 'Cafe24 Ssurround';
-          background: #ffe0e0;
-          font-size: 1rem;
-          font-weight: 700;
-          line-height: 1.5rem;
-        `
-      : css`
-          font-family: 'Cafe24 Ssurround air';
-          font-style: normal;
-          font-weight: 300;
-          font-size: 1rem;
-          line-height: 1.5rem;
-        `};
+  ${(props) => {
+    if (props.id === '누군가의 어제' && props.isActive === 'active') {
+      return css`
+        height: 1.1rem;
+        font-family: 'Cafe24 Ssurround';
+        background: #ffe0e0;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.5rem;
+      `;
+    } else if (props.isActive === 'active') {
+      return css`
+        height: 1.1rem;
+        font-family: 'Cafe24 Ssurround';
+        background: #e0e9ff;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.5rem;
+      `;
+    } else {
+      return css`
+        font-family: 'Cafe24 Ssurround air';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 1rem;
+        line-height: 1.5rem;
+      `;
+    }
+  }}
 `;
 
 export default NavBar;
