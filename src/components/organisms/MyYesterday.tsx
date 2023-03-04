@@ -1,15 +1,17 @@
 import styled from 'styled-components';
 import LikeAndMore from '../molecules/LikeAndMore';
+import Date from '../molecules/Date';
+import MainContent from '../molecules/MainContent';
 
 const MyYesterday = () => {
   return (
     <MyYesterdayContainer>
       <ContentContainer>
-        <Date>00년 00월 00일</Date>
-        <Content>
-          {`오늘은 상사에게 후배에게 하루종일 시달려서 지쳤어요. 
+        <Date date='22년 00월 00일' />
+        <MainContent
+          content={`오늘은 상사에게 후배에게 하루종일 시달려서 지쳤어요. 
           중간에 껴서 새우등 터지고 있는데 어디가서 말해봤자 제 이미지만 안좋아지겠죠?`}
-        </Content>
+        />
         <LikeAndMore isLike={false} />
       </ContentContainer>
       <CommentContainer>
@@ -31,27 +33,6 @@ const ContentContainer = styled.div`
   margin-top: 1rem;
   margin: auto;
   padding: 1.8rem;
-`;
-
-const Date = styled.p`
-  text-align: left;
-  font-family: 'Cafe24 Ssurround air';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 0.75rem;
-  line-height: 0.87rem;
-  color: #2b2b2b;
-`;
-
-const Content = styled.div`
-  margin-top: 1.5rem;
-  font-family: 'Cafe24 Ssurround air';
-  font-style: normal;
-  font-weight: 300;
-  line-height: 1.5rem;
-  font-size: 1rem;
-  text-align: left;
-  color: #2b2b2b;
 `;
 
 const CommentContainer = styled.div`
