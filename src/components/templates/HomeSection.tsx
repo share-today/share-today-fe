@@ -27,7 +27,12 @@ const HomeSection = () => {
 
   return (
     <HomeSectionWrap>
-      <NavBar navMenu={navMenu} tabIndex={tabIndex} setTabIndex={setTabIndex} />
+      <NavBar
+        navMenu={navMenu}
+        tabIndex={tabIndex}
+        setTabIndex={setTabIndex}
+        isHighlight={true}
+      />
       <HomeSectionContainer>{changeTabView()}</HomeSectionContainer>
     </HomeSectionWrap>
   );

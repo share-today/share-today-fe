@@ -8,20 +8,32 @@ const NavBar = (props: NavBarProps) => {
 
   return (
     <NavBarContainer>
-      <Wrap>
-        {props.navMenu.map((menu, index) => {
-          return (
-            <MenuSpan
-              isActive={props.tabIndex === index ? 'active' : ''}
-              id={menu}
-              key={index}
-              onClick={() => clickTab(index)}
-            >
-              {menu}
-            </MenuSpan>
-          );
-        })}
-      </Wrap>
+      {props.isHighlight ? (
+        <MenuContainer>
+          {props.navMenu.map((menu, index) => {
+            return (
+              <HighlightMenuSpan
+                isActive={props.tabIndex === index ? 'active' : ''}
+                id={menu}
+                key={index}
+                onClick={() => clickTab(index)}
+              >
+                {menu}
+              </HighlightMenuSpan>
+            );
+          })}
+        </MenuContainer>
+      ) : (
+        <MenuContainer>
+          {props.navMenu.map((menu, index) => {
+            return (
+              <MenuSpan key={index} onClick={() => clickTab(index)}>
+                {menu}
+              </MenuSpan>
+            );
+          })}
+        </MenuContainer>
+      )}
     </NavBarContainer>
   );
 };
@@ -31,14 +43,14 @@ const NavBarContainer = styled.div`
   justify-content: flex-end;
 `;
 
-const Wrap = styled.div`
+const MenuContainer = styled.div`
   width: 22rem;
   border-bottom: 0.06rem solid #2b2b2b;
   margin-top: 2rem;
-  padding-left: 1rem;
+  padding-left: 0.75rem;
 `;
 
-const MenuSpan = styled.span<{ isActive: string; id: string }>`
+const HighlightMenuSpan = styled.span<{ isActive: string; id: string }>`
   margin-right: 1.5rem;
   margin-bottom: 0.7rem;
   cursor: pointer;
@@ -72,6 +84,21 @@ const MenuSpan = styled.span<{ isActive: string; id: string }>`
       `;
     }
   }}
+`;
+
+const MenuSpan = styled.span`
+  margin-right: 1.5rem;
+  margin-bottom: 0.7rem;
+
+  font-family: 'Cafe24 Ssurround';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+
+  text-align: center;
+
+  color: #2b2b2b;
 `;
 
 export default NavBar;

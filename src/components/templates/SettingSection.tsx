@@ -13,12 +13,14 @@ const SettingSection = () => {
         navMenu={['시스템 설정']}
         tabIndex={tabIndex}
         setTabIndex={setTabIndex}
+        isHighlight={false}
       />
       <CustomText>알림</CustomText>
       <NavBar
         navMenu={['고객 센터']}
         tabIndex={tabIndex}
         setTabIndex={setTabIndex}
+        isHighlight={false}
       />
       <CustomText>의견 보내기</CustomText>
       <CustomText>FAQ</CustomText>
@@ -27,6 +29,7 @@ const SettingSection = () => {
         navMenu={['앱 정보']}
         tabIndex={tabIndex}
         setTabIndex={setTabIndex}
+        isHighlight={false}
       />
       <CustomText>이용 약관</CustomText>
       <CustomText>개인정보 처리 방침</CustomText>

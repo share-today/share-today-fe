@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import LikeAndMore from '../molecules/LikeAndMore';
 import Date from '../molecules/Date';
 import MainContent from '../molecules/MainContent';
+import Comment from '../molecules/Comment';
 
 const MyYesterday = () => {
   return (
@@ -15,7 +16,9 @@ const MyYesterday = () => {
         <LikeAndMore isLike={false} />
       </ContentContainer>
       <CommentContainer>
-        <Comment>{`모두가 당신의 힘든 점들을 모를 거라 생각하겠지만, 누군가는 분명 알고 있을 거에요.`}</Comment>
+        <Comment
+          comment={`모두가 당신의 힘든 점들을 모를 거라 생각하겠지만, 누군가는 분명 알고 있을 거에요.`}
+        />
         <LikeAndMore isLike={true} />
       </CommentContainer>
     </MyYesterdayContainer>
@@ -44,16 +47,6 @@ const CommentContainer = styled.div`
   border-radius: 0.5rem;
   margin-top: 1rem;
   padding: 1.56rem;
-`;
-
-const Comment = styled.div`
-  font-family: 'Cafe24 Ssurround air';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 0.87rem;
-  text-align: left;
-  line-height: 1.37rem;
-  color: #2b2b2b;
 `;
 
 export default MyYesterday;

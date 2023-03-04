@@ -11,7 +11,12 @@ const NoticeSection = () => {
 
   return (
     <NoticeSectionWrap>
-      <NavBar navMenu={navMenu} tabIndex={tabIndex} setTabIndex={setTabIndex} />
+      <NavBar
+        navMenu={navMenu}
+        tabIndex={tabIndex}
+        setTabIndex={setTabIndex}
+        isHighlight={false}
+      />
       <ListBox />
     </NoticeSectionWrap>
   );

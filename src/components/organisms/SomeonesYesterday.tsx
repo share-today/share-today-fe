@@ -41,16 +41,17 @@ const ContentContainer = styled.div`
 const CommentContainer = styled.div`
   position: absolute;
   bottom: 1.5rem;
-  width: 20.4rem;
+  left: 1rem;
+  width: 18.4rem;
   height: 10.75rem;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 0.5rem;
   margin: auto;
-  padding: 1.8rem;
+  padding-top: 1.8rem;
 `;
 
 const Input = styled.textarea`
-  width: 17.5rem;
+  width: 15.5rem;
   height: 4.5rem;
   border: none;
   background: transparent;
@@ -68,4 +69,5 @@ const Input = styled.textarea`
     color: #979797;
   }
 `;
+
 export default SomeonesYesterday;
