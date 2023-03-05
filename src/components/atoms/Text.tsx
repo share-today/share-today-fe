@@ -7,5 +7,4 @@ type Props = {
 
 export const Text = styled.p<Props>`
   color: ${(props) => (props.color ? props.color : 'black')};
-  margin: 1rem;
 `;

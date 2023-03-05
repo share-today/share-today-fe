@@ -93,6 +93,10 @@ const SideBarContainer = styled.div`
     right: 0;
     display: block;
   }
+
+  img {
+    cursor: pointer;
+  }
 `;
 
 const Menu = styled.li`

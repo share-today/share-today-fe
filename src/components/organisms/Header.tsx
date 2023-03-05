@@ -33,7 +33,10 @@ const Header = () => {
         </HeaderContainer>
       </>
     );
-  } else if (location.pathname.includes('notice')) {
+  } else if (
+    location.pathname.includes('notice') ||
+    location.pathname.includes('opinion')
+  ) {
     return (
       <HeaderContainer>
         <img src={arrow} alt='arrow' onClick={goBack} />
@@ -67,6 +70,7 @@ const HeaderContainer = styled.div`
   width: 23.4rem;
   justify-content: space-between;
   padding: 1.6rem 1.6rem 0 1.6rem;
+  cursor: pointer;
 `;
 
 const HeaderContainerFlexEnd = styled.div`
@@ -74,6 +78,7 @@ const HeaderContainerFlexEnd = styled.div`
   width: 23.4rem;
   justify-content: flex-end;
   padding: 1.6rem 1.6rem 0 1.6rem;
+  cursor: pointer;
 `;
 
 export default Header;

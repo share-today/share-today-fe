@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
+import Theme from './styles/Theme';
 import Header from './components/organisms/Header';
 import BundleOfStory from './pages/BundleOfStory';
 import BundleOfStoryDetail from './pages/BundleOfStoryDetail';
@@ -9,7 +10,7 @@ import Login from './pages/Login';
 import Notice from './pages/Notice';
 import NoticeDetail from './pages/NoticeDetail';
 import Setting from './pages/Setting';
-import Theme from './styles/Theme';
+import SendOpinion from './pages/SendOpinion';
 
 const Router = () => {
   return (
@@ -26,6 +27,7 @@ const Router = () => {
             <Route path='/notice' element={<Notice />} />
             <Route path='/notice-detail' element={<NoticeDetail />} />
             <Route path='/setting' element={<Setting />} />
+            <Route path='/send-opinion' element={<SendOpinion />} />
           </Routes>
         </MainSection>
       </RouterContainer>

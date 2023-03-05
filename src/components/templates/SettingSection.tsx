@@ -3,12 +3,18 @@ import styled from 'styled-components';
 import Theme from '../../styles/Theme';
 import NavBar from '../organisms/NavBar';
 import { Text } from '../atoms/Text';
+import { useNavigate } from 'react-router-dom';
 
 const SettingSection = () => {
+  const navigate = useNavigate();
   const [tabIndex, setTabIndex] = useState<number>(0);
 
+  const moveToPage = () => {
+    navigate('/send-opinion');
+  };
+
   return (
-    <SettingSectionWrap>
+    <SettingSectionContainer>
       <NavBar
         navMenu={['시스템 설정']}
         tabIndex={tabIndex}
@@ -22,7 +28,7 @@ const SettingSection = () => {
         setTabIndex={setTabIndex}
         isHighlight={false}
       />
-      <CustomText>의견 보내기</CustomText>
+      <CustomText onClick={moveToPage}>의견 보내기</CustomText>
       <CustomText>FAQ</CustomText>
       <CustomText>응원하기</CustomText>
       <NavBar
@@ -40,10 +46,10 @@ const SettingSection = () => {
         <CustomText>로그아웃</CustomText>
         <CustomText>회원 탈퇴</CustomText>
       </Section>
-    </SettingSectionWrap>
+    </SettingSectionContainer>
   );
 };
-const SettingSectionWrap = styled.div`
+const SettingSectionContainer = styled.div`
   height: 91vh;
   margin: auto;
   background-color: ${Theme.colors.white};
@@ -57,9 +63,11 @@ const CustomText = styled(Text)`
   line-height: 1.5rem;
 
   color: ${Theme.colors.black};
+  margin: 1.75rem 0 0 2.25rem;
+  cursor: pointer;
 `;
 
 const Section = styled.section`
-  margin-top: 5rem;
+  margin-top: 3rem;
 `;
 export default SettingSection;
