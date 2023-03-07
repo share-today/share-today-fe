@@ -1,7 +1,8 @@
 import { useRef, useEffect, MouseEvent } from 'react';
-import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
+import { useLocation, useNavigate } from 'react-router-dom';
+import styled, { css } from 'styled-components';
 import close from '../../assets/images/close.png';
+import Theme from '../../styles/Theme';
 
 const SideBar = ({
   isOpen,
@@ -11,6 +12,7 @@ const SideBar = ({
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const navigate = useNavigate();
+  const location = useLocation();
   const outside = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -56,36 +58,51 @@ const SideBar = ({
       ref={outside}
       className={isOpen ? 'open' : ''}
     >
-      <img
-        src={close}
-        alt='close'
-        onClick={toggleSide}
-        onKeyDown={toggleSide}
-      />
-      <ul>
-        <Menu id='home' onClick={moveToPage}>
-          홈
-        </Menu>
-        <Menu id='story' onClick={moveToPage}>
-          이야기 묶음
-        </Menu>
-        <Menu id='setting' onClick={moveToPage}>
-          설정
-        </Menu>
-      </ul>
+      <SideBarContentContainer>
+        <img
+          src={close}
+          alt='close'
+          onClick={toggleSide}
+          onKeyDown={toggleSide}
+        />
+        <ul>
+          <Menu
+            isSelected={location.pathname === '/'}
+            id='home'
+            onClick={moveToPage}
+          >
+            홈
+          </Menu>
+          <Menu
+            isSelected={location.pathname === '/story'}
+            id='story'
+            onClick={moveToPage}
+          >
+            이야기 묶음
+          </Menu>
+          <Menu
+            isSelected={location.pathname === '/setting'}
+            id='setting'
+            onClick={moveToPage}
+          >
+            설정
+          </Menu>
+        </ul>
+      </SideBarContentContainer>
     </SideBarContainer>
   );
 };
 
 const SideBarContainer = styled.div`
   position: absolute;
+  display: flex;
+
   height: 100%;
-  width: 12.5rem;
+  width: 100%;
+  text-align: right;
+  z-index: 1;
 
-  z-index: 5;
-  padding: 12px;
-  background-color: beige;
-
+  background: rgba(0, 0, 0, 0.6);
   top: 0;
   display: none;
 
@@ -95,14 +112,38 @@ const SideBarContainer = styled.div`
   }
 
   img {
+    padding: 1.5rem;
     cursor: pointer;
   }
 `;
 
-const Menu = styled.li`
-  margin: 30px 8px;
+const SideBarContentContainer = styled.div`
+  height: 100%;
+  width: 12.5rem;
+  z-index: 2;
+  margin-left: auto;
+  background-color: ${Theme.colors.white};
+`;
 
+const Menu = styled.li<{ isSelected: boolean }>`
+  margin: 50px 8px;
   cursor: pointer;
+  bottom: -9.3rem;
+  font-family: 'Cafe24 Ssurround air';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+
+  text-align: center;
+  color: ${Theme.colors.black};
+
+  ${(props) =>
+    props.isSelected
+      ? css`
+          background: #e0e9ff;
+        `
+      : css``}
 `;
 
 export default SideBar;
