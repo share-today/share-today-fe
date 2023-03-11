@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import BundleOfStorySection from '../components/templates/BundleOfStorySection';
 
 const BundleOfStory = () => {
   const navigate = useNavigate();
@@ -7,11 +8,7 @@ const BundleOfStory = () => {
     navigate('/story-detail');
   };
 
-  return (
-    <>
-      <button onClick={moveToPage}>이야기 묶음 디테일 페이지 이동</button>
-    </>
-  );
+  return <BundleOfStorySection />;
 };
 
 export default BundleOfStory;
