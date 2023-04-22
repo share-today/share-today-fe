@@ -41,7 +41,7 @@ const SideBar = ({
     toggleSide();
     switch (e.currentTarget.id) {
       case 'home':
-        navigate('/');
+        navigate('/home');
         break;
       case 'story':
         navigate('/story');
@@ -67,7 +67,7 @@ const SideBar = ({
         />
         <ul>
           <Menu
-            isSelected={location.pathname === '/'}
+            isSelected={location.pathname === '/home'}
             id='home'
             onClick={moveToPage}
           >

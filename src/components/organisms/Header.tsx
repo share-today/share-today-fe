@@ -23,7 +23,7 @@ const Header = () => {
     navigate(-1);
   };
 
-  if (location.pathname === '/') {
+  if (location.pathname === '/home') {
     return (
       <>
         <SideBar isOpen={isOpen} setIsOpen={setIsOpen} />

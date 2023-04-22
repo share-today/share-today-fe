@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import Theme from './styles/Theme';
 import Header from './components/organisms/Header';
@@ -20,8 +20,8 @@ const Router = () => {
         <MainSection>
           <Header />
           <Routes>
-            <Route path='/login' element={<Login />} />
-            <Route path='/' element={<Home />} />
+            <Route path='/' element={<Login />} />
+            <Route path='/home' element={<Home />} />
             <Route path='/story' element={<BundleOfStory />} />
             <Route path='/story-detail' element={<BundleOfStoryDetail />} />
             <Route path='/notice' element={<Notice />} />
