@@ -2,13 +2,13 @@ import { format } from 'date-fns';
 import styled from 'styled-components';
 
 type Props = {
-  currentDate: Date;
+  currentMonth: Date;
 };
 
 const CalenderHeader = (props: Props) => {
   return (
     <Header>
-      {format(props.currentDate, 'yy')}년 {format(props.currentDate, 'M')}월
+      {format(props.currentMonth, 'yy')}년 {format(props.currentMonth, 'M')}월
     </Header>
   );
 };

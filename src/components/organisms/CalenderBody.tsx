@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 import { format } from 'date-fns';
 import { startOfMonth, endOfMonth, startOfWeek, endOfWeek } from 'date-fns';
-import { isSameMonth, isSameDay, addDays, parse } from 'date-fns';
+import { addDays } from 'date-fns';
 
 type Props = {
-  currentDate: Date;
+  currentMonth: Date;
   selectedDate: Date;
 };
 
 const CalenderBody = (props: Props) => {
-  const monthStart = startOfMonth(props.currentDate);
+  const monthStart = startOfMonth(props.currentMonth);
   const monthEnd = endOfMonth(monthStart);
   const startDate = startOfWeek(monthStart);
   const endDate = endOfWeek(monthEnd);
@@ -23,35 +23,17 @@ const CalenderBody = (props: Props) => {
     for (let i = 0; i < 7; i++) {
       formattedDate = format(day, 'd');
       days.push(
-        <Col
-          className={`col cell ${
-            !isSameMonth(day, monthStart)
-              ? 'disabled'
-              : isSameDay(day, props.selectedDate)
-              ? 'selected'
-              : 'not-valid'
-          }`}
-        >
-          <span
-            className={
-              format(props.currentDate, 'M') !== format(day, 'M')
-                ? 'text not-valid'
-                : isSameMonth(day, monthStart) &&
-                  isSameDay(day, props.selectedDate)
-                ? 'text today'
-                : ''
-            }
-          >
-            {formattedDate}
-          </span>
+        <Col key={i}>
+          <span>{formattedDate}</span>
         </Col>
       );
       day = addDays(day, 1);
     }
-    rows.push(<Row className='row'>{days}</Row>);
+    rows.push(<Row>{days}</Row>);
     days = [];
   }
-  return <Body className='body'>{rows}</Body>;
+
+  return <Body>{rows}</Body>;
 };
 
 const Body = styled.div`
